@@ -1,36 +1,36 @@
-// Author: Rodrigo Andrade
-// Date: 17.02.25
+/**
+ * @file: ES-Gaussiana.cpp
+ * @author: Rodrigo Andrade
+ * @date: 17 Feb 2025
+ * @license: MIT
+ * @language: C++
+ * @github: https://github.com/RodrigoCAndrade/C02
+ */
 
+#include <cmath>
 #include <iomanip>
 #include <iostream>
-#include <cmath>
+
 using namespace std;
 
-double gaussiana(float x, float m, float s) {
-    const double pi = 3.14159;
-
-    const double fx = 1/sqrt(2*pi*pow(s, 2))*exp(-(pow(x-m, 2)/(2*pow(s, 2))));
-
-    return fx;
+void gaussiana(double &fx, double &x, double &m, double &s) {
+  fx =
+      1 / sqrt(2 * 3.14159 * s * s) * exp(-(((x - m) * (x - m)) / (2 * s * s)));
 }
 
 int main() {
+  // Definindo as variáveis x (ponto), m (média) e s (desvio padrão).
+  double x, m, s;
 
-    // Definindo as variáveis x (ponto), m (média) e s (desvio padrão).
-    float x;
-    float m;
-    float s;
+  // Obtendo os valores do usuário.
+  cin >> x >> m >> s;
 
-    // Obtendo os valores do usuário.
-    cin >> x;
-    cin >> m;
-    cin >> s;
+  // Calculando a gaussiana.
+  double fx;
+  gaussiana(fx, x, m, s);
 
-    // Calculando a gaussiana.
-    const double fx = gaussiana(x, m, s);
+  // Imprimindo o resultado da gaussiana com 4 casas decimais.
+  cout << fixed << setprecision(4) << fx << endl;
 
-    // Imprimindo o resultado da gaussiana com 4 casas decimais.
-    cout << fixed << setprecision(4) << fx;
-
-    return 0;
+  return 0;
 }

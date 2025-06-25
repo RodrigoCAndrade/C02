@@ -44,20 +44,6 @@ g++ ES-Areas.cpp -o ES-Areas
 ./ES-Areas
 ```
 
-## 📊 Progresso
-
-- [ ] Entrada e Saída
-- [ ] Estruturas de Seleção
-- [ ] Estruturas de Repetição
-- [ ] Vetores
-- [ ] Strings
-- [ ] Structs
-- [ ] Funções
-- [ ] Arquivos
-- [ ] NP1
-- [ ] NP2
-  - [x] Simulado I
-
 ## 🤝 Contribuindo
 
 Este repositório é uma iniciativa colaborativa para ajudar estudantes do Inatel. Você pode contribuir de várias formas:

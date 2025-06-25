@@ -1,14 +1,22 @@
+/**
+ * @file: ES-Soma.cpp
+ * @author: Rodrigo Andrade
+ * @date: 16 Feb 2025
+ * @license: MIT
+ * @language: C++
+ * @github: https://github.com/RodrigoCAndrade/C02
+ */
+
 #include <iostream>
 
+using namespace std;
+
 int main() {
-    // Declare variables A and B for user input.
-    double A, B;
-    std::cin >> A >> B;
+  // Declare variables A and B.
+  double A, B;
+  cin >> A >> B;
 
-    // Calculate the sum of A and B, and store the result in constant X.
-    const double X = A + B;
-
-    // Output the sum stored in variable X to the console.
-    std::cout << "X = " << X;
-    return 0;
+  // Output the sum.
+  cout << "X = " << A + B;
+  return 0;
 }

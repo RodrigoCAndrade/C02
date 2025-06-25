@@ -2,7 +2,6 @@
  * @file: IF-Coordenadas_de_um_ponto.cpp
  * @author: Rodrigo Andrade
  * @date: 22 Feb 2025
- * @version: 2.0
  * @license: MIT
  * @language: C++
  * @github: https://github.com/RodrigoCAndrade/C02
@@ -10,26 +9,28 @@
 
 #include <iostream>
 
+using namespace std;
+
 int main() {
   float x, y;
-  std::cin >> x >> y;
+  cin >> x >> y;
 
   if (x == 0 && y == 0) {
-    std::cout << "Origem" << std::endl;
+    cout << "Origem" << endl;
   } else if (x != 0 && y == 0) {
-    std::cout << "Eixo X" << std::endl;
+    cout << "Eixo X" << endl;
   } else if (y != 0 && x == 0) {
-    std::cout << "Eixo Y" << std::endl;
+    cout << "Eixo Y" << endl;
   } else if (x > 0) {
     if (y > 0) {
-      std::cout << "Q1" << std::endl;
+      cout << "Q1" << endl;
     } else
-      std::cout << "Q4" << std::endl;
+      cout << "Q4" << endl;
   } else if (x < 0) {
     if (y > 0) {
-      std::cout << "Q2" << std::endl;
+      cout << "Q2" << endl;
     } else
-      std::cout << "Q3" << std::endl;
+      cout << "Q3" << endl;
   }
 
   return 0;

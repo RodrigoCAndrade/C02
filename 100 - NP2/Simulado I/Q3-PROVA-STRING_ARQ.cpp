@@ -1,4 +1,4 @@
-/*
+/**
     @author: Rodrigo Andrade
     @date: 09/06/2025
     @description: This program is a test preparation from my C02 classes (PROVA - STRING+ARQ - 1).

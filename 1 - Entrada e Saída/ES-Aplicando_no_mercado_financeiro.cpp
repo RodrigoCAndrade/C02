@@ -1,35 +1,34 @@
-// Author: Rodrigo Andrade
-// Date: 17.02.25
+/**
+ * @file: ES-Aplicando_no_mercado_financeiro.cpp
+ * @author: Rodrigo Andrade
+ * @date: 17 Feb 2025
+ * @license: MIT
+ * @language: C++
+ * @github: https://github.com/RodrigoCAndrade/C02
+ */
 
-
+#include <cmath>
 #include <iomanip>
 #include <iostream>
-#include <cmath>
 
 using namespace std;
 
 int main() {
+  // Definindo as variáveis capital inicial, taxa de juros e tempo de aplicação.
+  double capital, rate;
+  int time;
 
-    // Definindo as variáveis capital inicial, taxa de juros e tempo de aplicação.
-    double initial_capital;
-    double interest_rate_percent;
-    int time;
+  // Obtendo os valores do usuário.
+  cin >> capital >> rate >> time;
 
-    // Obtendo os valores do usuário.
-    cin >> initial_capital;
-    cin >> interest_rate_percent;
-    cin >> time;
+  // Calculando o montante do período utilizando juros compostos.
+  double amount = capital * pow(1 + (rate / 100), time);
 
-    // Convertendo o valor de porcentagem para real.
-    double interest_rate = interest_rate_percent / 100;
+  // Subtraíndo o valor inicial do montante para obter o lucro.
+  double profit = amount - capital;
 
-    // Calculando o montante do período utilizando juros compostos.
-    double total_amount = initial_capital * pow(1 + interest_rate, time);
-    // Subtraíndo o valor inicial do montante para obter o lucro.
-    double profit = total_amount - initial_capital;
+  // Imprimindo o lucro para o usuário com duas casas decimais.
+  cout << "LUCRO = " << fixed << setprecision(2) << profit;
 
-    // Imprimindo o lucro para o usuário com duas casas decimais.
-    cout << "LUCRO = " << fixed << setprecision(2) << profit;
-
-    return 0;
+  return 0;
 }

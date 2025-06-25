@@ -2,7 +2,6 @@
  * @file: IF-Ordenacao_simples.cpp
  * @author: Rodrigo Andrade
  * @date: 22 Feb 2025
- * @version: 2.0
  * @license: MIT
  * @language: C++
  * @github: https://github.com/RodrigoCAndrade/C02
