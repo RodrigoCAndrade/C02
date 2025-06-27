@@ -1,42 +1,81 @@
-/*
-    Author: Rodrigo Andrade
-    Date: 22.02.25
-    Exercise: IF-Dia da semana
-*/
+/**
+ * @file: IF-Dia_da_semana.cpp
+ * @author: Rodrigo Andrade
+ * @date: 22 Feb 2025
+ * @license: MIT
+ * @language: C++
+ * @github: https://github.com/RodrigoCAndrade/C02
+ */
 
-// Foi utilizado a fórmula de Zeller, pois o outro estava bugado.
-
+#include <cmath>
 #include <iostream>
-#include <map>
-#include <string>
 
+using namespace std;
+
+/**
+  @brief: Programa que calcula o dia da semana de uma data específica
+  @return: 0 se executado com sucesso
+*/
 int main() {
-  int d;
-  int m;
-  int a;
+  // Variáveis para armazenar dia, mês e ano
+  int d, m, a;
+  cin >> d >> m >> a;
 
-  std::cin >> d >> m >> a;
+  // Se o mês for janeiro ou fevereiro, consideramos como se fosse do ano
+  // anterior
+  double g = a;
+  if (m <= 2) g = a - 1;
 
-  if (m < 3) {
-    m += 12;
-    a -= 1;
+  // Janeiro vira mês 13 e fevereiro vira mês 14 do ano anterior
+  double f = m + 1;
+  if (m <= 2) f = m + 13;
+
+  // Fórmula principal: calcula um número baseado na data
+  // 365.25 representa a duração média de um ano (incluindo anos bissextos)
+  // 30.6 representa a duração média de um mês
+  // 621049 é uma constante de ajuste para o algoritmo
+  double n = int(365.25 * g) + int(30.6 * f) - 621049 + d;
+
+  // Correção delta baseada em períodos do calendário
+  int delta = 2;
+  if (n < 36523)
+    delta = 2;  // Período mais antigo
+  else if (36523 <= n && n < 73048)
+    delta = 1;  // Período intermediário
+  else if (n >= 73048)
+    delta = 0;  // Período mais recente
+
+  // Calcula o dia da semana: aplica delta, divide por 7 e pega o resto
+  // O resultado vai de 1 a 7, onde 1=domingo, 2=segunda, etc.
+  int ds = (int(n) + delta) % 7 + 1;
+
+  // Switch para converter o número do dia em texto
+  // 1=domingo, 2=segunda-feira, ..., 7=sábado
+  switch (ds) {
+    case 1:
+      cout << "domingo" << endl;
+      break;
+    case 2:
+      cout << "segunda-feira" << endl;
+      break;
+    case 3:
+      cout << "terca-feira" << endl;
+      break;
+    case 4:
+      cout << "quarta-feira" << endl;
+      break;
+    case 5:
+      cout << "quinta-feira" << endl;
+      break;
+    case 6:
+      cout << "sexta-feira" << endl;
+      break;
+    case 7:
+      cout << "sabado" << endl;
+      break;
+    default:
+      break;
   }
-
-  int k = a % 100;
-  int j = a / 100;
-
-  int f = d + (13 * (m + 1)) / 5 + k + (k / 4) + (j / 4) - (2 * j);
-  int ds = f % 7;
-
-  ds = (ds + 7) % 7;
-
-  std::map<int, std::string> day_names = {
-      {0, "sabado"},      {1, "domingo"},      {2, "segunda-feira"},
-      {3, "terca-feira"}, {4, "quarta-feira"}, {5, "quinta-feira"},
-      {6, "sexta-feira"},
-  };
-
-  std::cout << day_names[ds] << std::endl;
 
   return 0;
 }

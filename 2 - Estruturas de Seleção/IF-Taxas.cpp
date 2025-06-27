@@ -19,20 +19,21 @@ int main() {
   double salary_decreased = salary;
 
   if (salary <= 2000) {
-    cout << "Isento";
+    cout << "Isento" << endl;
     return 0;
   }
 
   salary_decreased -= 2000;
 
   if (2000 < salary && salary <= 3000) {
-    cout << "R$ " << fixed << setprecision(2) << salary_decreased * 0.08;
+    cout << "R$ " << fixed << setprecision(2) << salary_decreased * 0.08
+         << endl;
   } else if (3000 < salary && salary <= 4500) {
     cout << "R$ " << fixed << setprecision(2)
-         << 80 + (salary_decreased - 1000) * 0.18;
+         << 80 + (salary_decreased - 1000) * 0.18 << endl;
   } else if (4500 < salary) {
     cout << fixed << setprecision(2) << "R$ "
-         << 350 + (salary_decreased - 2500) * 0.28;
+         << 350 + (salary_decreased - 2500) * 0.28 << endl;
   }
 
   return 0;

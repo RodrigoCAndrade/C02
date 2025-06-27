@@ -9,21 +9,20 @@
 
 #include <iostream>
 
+using namespace std;
+
 int main() {
   // Lê e armazena n1, n2 e n3.
   int n1, n2, n3;
-  std::cin >> n1 >> n2 >> n3;
+  cin >> n1 >> n2 >> n3;
 
   // Ordena n1, n2, n3 do maior para o menor usando swap e ifs.
-  if (n1 > n2) std::swap(n1, n2);
-  if (n1 > n3) std::swap(n1, n3);
-  if (n2 > n3) std::swap(n2, n3);
+  if (n1 > n2) swap(n1, n2);
+  if (n1 > n3) swap(n1, n3);
+  if (n2 > n3) swap(n2, n3);
 
   // Exibe o resultado.
-  std::cout << std::endl
-            << n1 << std::endl
-            << n2 << std::endl
-            << n3 << std::endl;
+  cout << endl << n1 << endl << n2 << endl << n3 << endl;
 
   return 0;
 }
